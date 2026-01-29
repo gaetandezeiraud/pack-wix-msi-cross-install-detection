@@ -1,19 +1,19 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
-     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"> <?if $(var.MsiType) = "A" ?>
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"> 
+  <?if $(var.MsiType) = "A" ?>
     <?define ProductId      = "11111111-1111-1111-1111-111111111111" ?>
-    <?define ProductName    = "AppMsiTest-FolderA" ?>
     <?define LevelFolderA   = "1" ?>
     <?define LevelFolderB   = "1000" ?>
   <?else?>
     <?define ProductId      = "22222222-2222-2222-2222-222222222222" ?>
-    <?define ProductName    = "AppMsiTest-FolderB" ?>
     <?define LevelFolderA   = "1000" ?>
     <?define LevelFolderB   = "1" ?>
   <?endif?>
+  <?define   ProductName    = "AppMsiTest" ?>
   
   <Package Name="$(var.ProductName)" Manufacturer="YourCompany" Version="1.0.0" UpgradeCode="12345678-1234-1234-1234-1234567890AB" Scope="perUser">
-    
-    <MajorUpgrade DowngradeErrorMessage="You are not allowed to downgrade this software." />
+	  
+    <MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="You are not allowed to downgrade this software." />
     <MediaTemplate EmbedCab="yes" />
 
     <ui:WixUI Id="WixUI_Minimal" />
