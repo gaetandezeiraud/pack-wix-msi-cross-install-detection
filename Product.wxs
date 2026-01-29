@@ -11,9 +11,9 @@
     <?define LevelFolderB   = "1" ?>
   <?endif?>
   
-  <Package Name="$(var.ProductName)" Manufacturer="VotreEntreprise" Version="1.0.0" UpgradeCode="12345678-1234-1234-1234-1234567890AB" Scope="perUser">
+  <Package Name="$(var.ProductName)" Manufacturer="YourCompany" Version="1.0.0" UpgradeCode="12345678-1234-1234-1234-1234567890AB" Scope="perUser">
     
-    <MajorUpgrade DowngradeErrorMessage="Downgrade non autorisé." />
+    <MajorUpgrade DowngradeErrorMessage="You are not allowed to downgrade this software." />
     <MediaTemplate EmbedCab="yes" />
 
     <ui:WixUI Id="WixUI_Minimal" />
