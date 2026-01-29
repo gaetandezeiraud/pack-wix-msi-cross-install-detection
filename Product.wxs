@@ -11,14 +11,14 @@
     <?define LevelFolderB   = "1" ?>
   <?endif?>
   
-  <Package Name="$(var.ProductName)" Manufacturer="VotreEntreprise" Version="1.0.0" UpgradeCode="12345678-1234-1234-1234-1234567890AB" Scope="perMachine">
+  <Package Name="$(var.ProductName)" Manufacturer="VotreEntreprise" Version="1.0.0" UpgradeCode="12345678-1234-1234-1234-1234567890AB" Scope="perUser">
     
     <MajorUpgrade DowngradeErrorMessage="Downgrade non autorisé." />
     <MediaTemplate EmbedCab="yes" />
 
     <ui:WixUI Id="WixUI_Minimal" />
 
-    <StandardDirectory Id="ProgramFiles64Folder">
+    <StandardDirectory Id="PerUserProgramFilesFolder">
       <Directory Id="INSTALLFOLDER" Name="AppMsiTest">
         <Directory Id="DataDir" Name="Data">
            <Directory Id="FolderADir" Name="FolderA" />
@@ -29,7 +29,7 @@
 
     <Feature Id="App" Title="Core App" Level="1">
        <Component Directory="INSTALLFOLDER">
-	        <File Source="bin/AppMsiTest.exe" />
+            <File Source="bin/AppMsiTest.exe" />
        </Component>
     </Feature>
 
