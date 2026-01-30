@@ -61,7 +61,7 @@
 
   <Fragment>
     <ComponentGroup Id="Grp_FolderA" Directory="FolderADir">
-      <Files Include="Data/FolderA/**" />
+      <Files Include="Data/FolderA/**" /> 
     </ComponentGroup>
   </Fragment>
 
